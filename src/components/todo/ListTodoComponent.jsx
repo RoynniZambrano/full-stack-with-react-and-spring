@@ -10,7 +10,8 @@ class ListTodoComponent extends Component {
                 [
                     { id: 1, description: "Learn React 1", done: false, targetDate: new Date() },
                     { id: 2, description: "Learn React 2", done: false, targetDate: new Date() },
-                    { id: 3, description: "Learn React 3", done: false, targetDate: new Date() }
+                    { id: 3, description: "Learn React 3", done: false, targetDate: new Date() },
+                    { id: 4, description: "Learn React 4", done: false, targetDate: new Date() }
                 ]
         }
     }
