@@ -4,10 +4,15 @@ import  {Link}  from 'react-router-dom'
 
 class WelcomeComponent extends Component {
     render() {
-        return <div className="container">
-                <h1> Welcome! </h1>
-                     welcome {this.props.match.params.name}. todo list <Link to="/todos"> List </Link>
-                </div>
+        return (
+                <>
+                    <h1> Welcome! </h1>
+                    <div className="container">
+                        welcome {this.props.match.params.name}.
+                        todo list <Link to="/todos"> List </Link>
+                    </div>
+                </>
+                )
     }
 }
 
