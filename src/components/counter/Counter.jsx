@@ -59,10 +59,6 @@ class Counter extends Component {
 // buttons
 class CounterButton extends Component {
 
-  constructor() {
-    super()
-  }
-
   render() {
     return (
       <div className="counterComponent">
