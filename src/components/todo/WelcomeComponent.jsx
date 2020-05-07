@@ -1,13 +1,14 @@
 
 import React, { Component } from 'react';
 import  {Link}  from 'react-router-dom'
-import HelloWorldService from '../../api/todo/helloWorldService.js'
+import HelloWorldService from '../../api/todo/HelloWorldService.js'
 
 class WelcomeComponent extends Component {
     constructor(props){
         super(props)
         this.retrieveWelcomeMessage = this.retrieveWelcomeMessage.bind(this)
         this.handleSuccessfulResponse = this.handleSuccessfulResponse.bind(this)
+        this.handleError = this.handleError.bind(this)
         this.state = {
             welcomeMessage: ''
         }
@@ -39,7 +40,7 @@ class WelcomeComponent extends Component {
     retrieveWelcomeMessage(){
         HelloWorldService.executeHelloWorldService()
         .then(response => this.handleSuccessfulResponse(response))
-        //.catch()
+        .catch(error => this.handleError(error))
         
     }
 
@@ -48,6 +49,11 @@ class WelcomeComponent extends Component {
     handleSuccessfulResponse(response){
         this.setState({welcomeMessage: response.data})
 
+    }
+
+
+    handleError(error){
+        console.log(error.response)
     }
 
 }
